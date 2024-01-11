@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background-color: black;
+            color: #eee6e6;
+        }
+
+        .projetos {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .flex-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-content: space-around;
+            background-color: rgba(0, 0, 0, 0);
+            transition: 3s;
+        }
+
+        .projeto {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .projeto:hover {
+            opacity: 0.8;
+        }
+
+        .projeto a {
+            color: #ff0000;
+            font-size: 20px;
+            text-decoration: underline;
+        }
+
+        .projeto img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <!-- Seu cabeçalho aqui -->
+    </header>
+
+    <div class="projetos">
+        <h2 style="font-size: 50px; align-items: center; text-align: center;"> MEUS <span>PROJETOS</span></h2>
+        <div class="flex-container">
+            <!-- Projetos com links -->
+            <div class="projeto">
+                <a href="link_projeto_1">Projeto 1</a>
+                <img src="imagem_projeto_1.png" alt="Projeto 1">
+                <p class="ttx">Breve descrição do Projeto 1.</p>
+            </div>
+            <div class="projeto">
+                <a href="link_projeto_2">Projeto 2</a>
+                <img src="imagem_projeto_2.png" alt="Projeto 2">
+                <p class="ttx">Breve descrição do Projeto 2.</p>
+            </div>
+            <div class="projeto">
+                <a href="link_projeto_3">Projeto 3</a>
+                <img src="imagem_projeto_3.png" alt="Projeto 3">
+                <p class="ttx">Breve descrição do Projeto 3.</p>
+            </div>
+
+            <!-- Projetos para download de APK -->
+            <div class="projeto">
+                <a href="link_download_apk_1" download>Download APK 1</a>
+                <img src="imagem_apk_1.png" alt="Download APK 1">
+                <p class="ttx">Breve descrição do Download APK 1.</p>
+            </div>
+            <div class="projeto">
+                <a href="link_download_apk_2" download>Download APK 2</a>
+                <img src="imagem_apk_2.png" alt="Download APK 2">
+                <p class="ttx">Breve descrição do Download APK 2.</p>
+            </div>
+            <div class="projeto">
+                <a href="link_download_apk_3" download>Download APK 3</a>
+                <img src="imagem_apk_3.png" alt="Download APK 3">
+                <p class="ttx">Breve descrição do Download APK 3.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <!-- Seu rodapé aqui -->
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+   
+}
+
+.carousel-container {
+    margin-top: 15px;
+    width: 80%;
+    margin: 50px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    margin-top: 55px;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+    width: 100%;
+    height: 70%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 400px; /* Defina a altura desejada para as imagens */
+    overflow: hidden;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #25D366;
+    cursor: pointer;
+}
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #25D366;
+    cursor: pointer;
+}
+
+.whatsapp-icon{
+    margin: 40px;
+    width: 30px;
+    height: 30px;
+    opacity: 0.09;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+}
+
+header {
+    background-color: #007BFF;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+}
+
+h1 {
+    color: #007BFF;
+}
+
+p {
+    font-size: 18px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #007BFF;
+    color: white;
+}
+contato
+{
+    margin-bottom: 200px;
+    padding: 80px 4%;
+}
+form ,h2{
+    color: #eee6e6;
+    text-align: center;
+    margin-bottom: 40px;
+}
+form ,span{
+    color:#ff0000
+}
+.form{
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contato {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 50px 0;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.interface h2 {
+    color: #007BFF;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.interface span {
+    color: #ff4500;
+}
+
+.interface form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.interface input,
+.interface button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.interface input:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+#txtarea {
+    resize: vertical;
+}
+
+.interface button {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.interface button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

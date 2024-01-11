@@ -25,7 +25,7 @@
 </head >
 <body>
  <section id="começo">
- <div class="background">
+ 
   <header>
     <div class="logo">
       <i class="fa-solid fa-a fa-sm"></i>
@@ -55,7 +55,7 @@
     <div class="text"> 
     <h3> Portifólio</h3>
     <h1> ABNER JEZRREL </h1> 
-      <p> Sou recém formado em Desenvolvimento de Sistemas, <span> BEM VINDO!!!</span></P>
+      <p> Sou formado em Desenvolvimento de Sistemas, <span> BEM VINDO!!!</span></P>
       <div class="redes">
         <a href="https://github.com/jezrreloriginal?tab=repositories"><i class="fa-brands fa-github"></i></a>
         <a href="https://www.linkedin.com/in/abner-abner-/"><i class="fa-brands fa-linkedin"></i></a> <br>
@@ -71,19 +71,21 @@
 
  <section id="sobre-l" class="sobre">
   <div class="flex">
+
     <div class="ft-po" id="abner"> <img src="abner.jpg" alt="">
-    </div>
+  </div>
 
     <div class="tex-sobre"> 
+      <fieldset>
       <h2> Olá, me chamo <span> ABNER JEZRREL.</span></h2>
-      <p> 
+      <p id="ppp"> 
         Nascido em 2005 em Santo André, São Paulo,Abner Jezrrel Lopes dos Santos cresceu com dois irmãos e uma irmã, compartilhando risos e desentendimentos. Infância livre na rua, brincando de policia e ladrão, foi onde o gosto por ficção e fantasia floresceu, semeando o interesse pela tecnologia. Mudanças frequentes não o abalaram;
         </p>
-        <p>
+        <p  id="ppp">
           sempre viu oportunidades em novos começos. Movido por sonhos de importância e pioneirismo na família, trilha o caminho da realização, atualmente cursando Desenvolvimento de Software. Sua jornada promissora aponta para a realização do sonho de ingressar na faculdade de Engenharia de Software, forjando um legado inovador.
 
         </p>
-    </div>
+    </div></fieldset>
   </div>
  
 </section>                              
@@ -92,14 +94,45 @@
 
 <section id="projeto" class="pj">
 
-<div class="projetos">
-  <h2 style="font-size: 70px;"> MEUS <SPAN>PROJETOS</SPAN></h2>
-  <div class="flex-container">
-    <div class="img"><p class="ttx">Página de login, onde utilizo a linguagem <span> PHP</span> para se conectar com um <span>BD</span>. e <span>HTML</span> com <span>CSS</span> para as demais configurações </p><img src="local-na-rede-internet (1).png" alt=""></div>
-    <div class="img"><p class="ttx">calculadora, utilizando a linguagem de programação<span> Kotlin.</span><img src="calculadora.png" alt=""></div>
-    <div class="img"><p class="ttx">Softaware desenvolvido atraves de<span>PHP</span> para implementaç~çao de compra, venda, e cadastro de produtos para um comercio, utilizando uma ampla rede de <span>Banco de Dados</span></p><img src="comercio-eletronico (1).png" alt=""></div>  
-    <div class="img"><p class="ttx">E-Comerce, site de vendas online, utilkizando as ferramentas de <span> Programação Web</span></p><img src="comercio-eletronico.png" alt=""></div>
+  <div class="projetos">
+    <h2 style="font-size: 50px; align-items: center; text-align: center;"> MEUS <span>PROJETOS</span></h2>
+    <div class="flex-container">
+        <!-- Projetos com links -->
+        <div class="projeto">
+            <a href="https://jezrreloriginal.github.io/quiz.jezrreltec.com/">Quiz</a>
+            <img src="quiz.png" alt="Projeto 1">
+            <p class="ttx">Quiz que possibilita a inserção das perguntas, essass ficam armazenadas temporariamente em uma TXT.</p>
+        </div>
+        <div class="projeto">
+            <a href="https://jezrreloriginal.github.io/pizza/#home">Land Page</a>
+            <img src="pizza.png" alt="Projeto 2">
+            <p class="ttx">Projeto demostrativo detecnicas de  web design </p>
+        </div>
+        <div class="projeto">
+            <a href="https://octantal-breaths.000webhostapp.com/formulario.php">Formulario </a>
+            <img src="formulario.png" alt="Projeto 3">
+            <p class="ttx"> Página ligada a um BD MySQL. (PHP, HTML e SQL).</p>
+        </div>
+
+        <!-- Projetos para download de APK -->
+        <div class="projeto">
+            <a href="https://github.com/jezrreloriginal/CAL.git" download>Calculadora</a>
+            <img src="cal.png" alt="Download APK 1">
+            <p class="ttx">Aplicativo mobile desenvolvido em Kotlin.</p>
+        </div>
+        <div class="projeto">
+            <a href="https://github.com/jezrreloriginal/tela.git" download>Pinte a Tela</a>
+            <img src="pintar.jpg" alt="ownload APK 3">
+            <p class="ttx">Aplicativo mobile desenvolvido com lógic de váriaveis em C++.</p>
+        </div>
+        <div class="projeto">
+            <a href="https://github.com/jezrreloriginal/mickeymei.git" download>Pegue o Mickey</a>
+            <img src="mickey.png" alt="Download APK 3">
+            <p class="ttx">Aplicativo Mobile desenvolvido em C++(game).</p>
+        </div>
     </div>
+</div>
+
 </section>
 
 
@@ -114,7 +147,7 @@
       <input id="txtarea" type="text" name="mensagen" placeholder="Sua Mensagem" style="height: 200px;">
   
       <button type="submit">ENVIAR</button>
-  </form>
+  
   </form>
   <div class="wat">
   <a href="https://api.whatsapp.com/send?phone=+5511951367508&text=Olá,%20olhei%20o%20seu%20portfólio%20e%20gostaria%20de%20mais%20informações." target="_blank" style="color: red;">
@@ -144,8 +177,9 @@
   </div>
 </section>
 
+
 <div class="roda">
-  <footer><a href="#começo">Começo</a><br>
+  <footer><a href="#começo"></a><br>
     <p> ABNER JEZRREL LOPES DOS SANTOS</p><br>
     <P> abnerjezrrel06102005@gmail.com</P>
     <a href="https://github.com/jezrreloriginal?tab=repositories"><i class="fa-brands fa-github"></i></a>
