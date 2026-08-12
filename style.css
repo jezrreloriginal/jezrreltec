@@ -1,49 +1,365 @@
-/* Card de Iniciação Científica */
-.pesquisa-section {
-    padding: 60px 20px;
-    background-color: #0d1117;
+/* ==========================================================================
+   1. VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
+   ========================================================================== */
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-color: #38bdf8;
+    --accent-hover: #0ea5e9;
+    --whatsapp-color: #22c55e;
+    --whatsapp-hover: #16a34a;
+    --border-color: #334155;
+    --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding-top: 70px;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO E NAVEGAÇÃO
+   ========================================================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 8%;
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+.header .logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--accent-color);
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.8rem;
+}
+
+.nav-menu a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   3. SEÇÕES GERAIS E HERO
+   ========================================================================== */
+.section {
+    padding: 5rem 8% 2rem 8%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    border-left: 4px solid var(--accent-color);
+    padding-left: 12px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 3rem 8%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.hero-container h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+}
+
+.hero-container h2 {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.hero-container p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+}
+
+/* ==========================================================================
+   4. CARDS E GRID DE PROJETOS
+   ========================================================================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 1.8rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.1);
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+}
+
+.card-content p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.card-content em {
+    color: var(--accent-color);
+    font-size: 0.85rem;
+}
+
+/* Card da Iniciação Científica */
+.ic-card {
+    background: linear-gradient(135deg, var(--card-bg) 0%, #0f172a 100%);
+    border-left: 5px solid var(--accent-color);
+}
+
+.ic-card p strong {
+    color: var(--text-primary);
+}
+
+/* Footer do Card e Links */
+.card-footer {
+    margin-top: 1rem;
+}
+
+.card-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 0.8rem;
+    transition: opacity 0.2s;
+}
+
+.card-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Tags de Tecnologias */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.8rem 0;
+}
+
+.tag {
+    background-color: rgba(56, 189, 248, 0.08);
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   5. BOTÕES
+   ========================================================================== */
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    background-color: var(--accent-color);
+    color: #0f172a;
+    padding: 0.75rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.btn-outline:hover {
+    background-color: rgba(56, 189, 248, 0.1);
+}
+
+.btn-whatsapp {
+    background-color: var(--whatsapp-color);
     color: #ffffff;
 }
 
-.ic-card {
-    background: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 10px;
-    padding: 25px;
-    max-width: 800px;
-    margin: 20px auto;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+.btn-whatsapp:hover {
+    background-color: var(--whatsapp-hover);
 }
 
-.ic-header {
+/* ==========================================================================
+   6. FORMULÁRIO DE CONTATO
+   ========================================================================== */
+.contact-form {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 2.2rem;
+    border-radius: 12px;
+    max-width: 750px;
     display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
+    flex-direction: column;
+    gap: 1.2rem;
 }
 
-.icon-ic {
-    font-size: 2.5rem;
-    color: #00bcd4;
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
-.orientador {
-    color: #8b949e;
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   7. RODAPÉ
+   ========================================================================== */
+.footer {
+    text-align: center;
+    padding: 3rem 8%;
+    border-top: 1px solid var(--border-color);
+    margin-top: 5rem;
+    color: var(--text-secondary);
     font-size: 0.9rem;
 }
 
-.tech-tags {
-    margin-top: 15px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+.footer-links {
+    margin-top: 1rem;
 }
 
-.tech-tags span {
-    background: #1f6beb33;
-    color: #58a6ff;
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 0.85rem;
-    border: 1px solid #1f6beb;
+.footer-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: text-decoration 0.2s;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   8. RESPONSIVIDADE (MOBILE / TABLET)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem 5%;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.85rem;
+    }
+
+    .hero-container h1 {
+        font-size: 2rem;
+    }
+
+    .hero-container h2 {
+        font-size: 1.05rem;
+    }
+
+    .section {
+        padding: 4rem 5% 1.5rem 5%;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
 }
