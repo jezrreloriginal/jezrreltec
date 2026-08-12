@@ -1,178 +1,646 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54QDVV24VJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-54QDVV24VJ');
-</script>
-  
     <meta charset="UTF-8">
-    <meta name="description" content="portifolio de desenvolvedor de softaware - Abner jezrrel">
-    <meta name="keywords" content="Desenvolvedor de Software, 2. Programador Web, 3. Desenvolvimento de Aplicativos, 4. Desenvolvimento Front-end, 5. Desenvolvimento Back-end, 6. Desenvolvimento Full Stack, 7. Linguagens de Programação (por exemplo, Python, JavaScript, Java), 8. Desenvolvimento de Sites, 9. Desenvolvimento de Aplicativos Móveis, 10. Experiência em Bancos de Dados, 11. HTML, CSS, JavaScript, 12. Frameworks (por exemplo, React, Angular, Vue), 13. Desenvolvimento de E-commerce, 14. Desenvolvimento de Sistemas Web, 15. Portfólio de Projetos, 16. Experiência em UI/UX, 17. Soluções de E-commerce, 18. Desenvolvimento de Jogos, 19. Desenvolvimento de Software Personalizado, 20. Consultoria em Desenvolvimento de Software.">
-    <meta name="author" content="Abner jezrrel">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content=" https://ifrs.edu.br/restinga/wp-content/uploads/sites/5/2022/04/Tecnolog.-Analise-e-Desenv.-Sistemas_Horizontal.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    
-<title> Abner jezrrel- portifolio.com
-</title>
+    <title>Abner Jezrrel | Portfólio</title>
+    <style>
+/* ==========================================================================
+   1. VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
+   ========================================================================== */
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-color: #38bdf8;
+    --accent-hover: #0ea5e9;
+    --whatsapp-color: #22c55e;
+    --whatsapp-hover: #16a34a;
+    --border-color: #334155;
+    --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+    scroll-behavior: smooth;
+}
 
-</head >
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding-top: 70px;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO E NAVEGAÇÃO
+   ========================================================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 8%;
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+.header .logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--accent-color);
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.8rem;
+}
+
+.nav-menu a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   3. SEÇÕES GERAIS E HERO
+   ========================================================================== */
+.section {
+    padding: 5rem 8% 2rem 8%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    border-left: 4px solid var(--accent-color);
+    padding-left: 12px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 3rem 8%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.hero-container h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+}
+
+.hero-container h2 {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.hero-container p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+}
+
+/* ==========================================================================
+   4. CARDS E GRID DE PROJETOS
+   ========================================================================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 1.8rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.1);
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+}
+
+.card-content p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.card-content em {
+    color: var(--accent-color);
+    font-size: 0.85rem;
+}
+
+/* Card da Iniciação Científica */
+.ic-card {
+    background: linear-gradient(135deg, var(--card-bg) 0%, #0f172a 100%);
+    border-left: 5px solid var(--accent-color);
+}
+
+.ic-card p strong {
+    color: var(--text-primary);
+}
+
+/* Footer do Card e Links */
+.card-footer {
+    margin-top: 1rem;
+}
+
+.card-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 0.8rem;
+    transition: opacity 0.2s;
+}
+
+.card-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Tags de Tecnologias */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.8rem 0;
+}
+
+.tag {
+    background-color: rgba(56, 189, 248, 0.08);
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   5. BOTÕES
+   ========================================================================== */
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    background-color: var(--accent-color);
+    color: #0f172a;
+    padding: 0.75rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.btn-outline:hover {
+    background-color: rgba(56, 189, 248, 0.1);
+}
+
+.btn-whatsapp {
+    background-color: var(--whatsapp-color);
+    color: #ffffff;
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--whatsapp-hover);
+}
+
+/* ==========================================================================
+   6. FORMULÁRIO DE CONTATO
+   ========================================================================== */
+.contact-form {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 2.2rem;
+    border-radius: 12px;
+    max-width: 750px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   7. RODAPÉ
+   ========================================================================== */
+.footer {
+    text-align: center;
+    padding: 3rem 8%;
+    border-top: 1px solid var(--border-color);
+    margin-top: 5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: text-decoration 0.2s;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   8. RESPONSIVIDADE (MOBILE / TABLET)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem 5%;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.85rem;
+    }
+
+    .hero-container h1 {
+        font-size: 2rem;
+    }
+
+    .hero-container h2 {
+        font-size: 1.05rem;
+    }
+
+    .section {
+        padding: 4rem 5% 1.5rem 5%;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+    </style>
+</head>
 <body>
- <section id="começo">
- <div class="background">
-  <header>
-    <div class="logo">
-      <i class="fa-solid fa-a fa-sm"></i>
-    </div>
-<div class="cabeçalho">
-  <li>
-  <a href="#sobre-l">Sobre</a>
-  </li>
 
-  <li>
-    <a href="#projeto">Projetos </a>
-    </li>
-  
-    <li>
-      <a href="#contato">Mensagem </a>
-      </li>
-  
-      <li>
-        <a href="#Habilidades">Habilidades </a>
-        </li>
-        <button onclick="window.location.href='https://docs.google.com/document/d/19hVGbVaYRRCzVKj2kX44GHvWHdnRo3FZ/edit?usp=sharing&ouid=108422302756514981403&rtpof=true&sd=true'"> Meu CV </button> 
-    </div>
-  </header>
+    <!-- CABEÇALHO E NAVEGAÇÃO -->
+    <header class="header">
+        <div class="logo">ABNER JEZRREL</div>
+        <nav class="nav-menu">
+            <a href="#sobre">Sobre</a>
+            <a href="#ic">Iniciação Científica</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
 
-  <div class="container-text">
+    <!-- SEÇÃO HERO / SOBRE -->
+    <section class="hero" id="sobre">
+        <div class="hero-container">
+            <h1>ABNER JEZRREL LOPES DOS SANTOS</h1>
+            <h2>Desenvolvimento de Sistemas & Bacharelado Interdisciplinar em Ciência e Tecnologia (UFABC)</h2>
+            <p>
+                Sempre enxergou oportunidades em novos começos e desafiou limites para alcançar grandes conquistas. 
+                Após ser aprovado em 9 universidades, escolheu a UFABC para cursar Ciências e Tecnologia, explorando a convergência entre
+                tecnologia, biofotônica e neurociências. Formado como Técnico em Desenvolvimento de Sistemas, atua na interseção entre 
+                hardware, software e pesquisa acadêmica avançada.
+            </p>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1X38h7G73k4eAAnbXpOp368Ew4A2sZ2P0/view?usp=sharing" target="_blank" class="btn btn-outline">Meu TCC</a>
+                <a href="http://lattes.cnpq.br/1885025295013399" target="_blank" class="btn btn-outline">Currículo Lattes</a>
+                <a href="https://github.com/jezrreloriginal" target="_blank" class="btn btn-outline">GitHub</a>
+                <a href="https://www.linkedin.com/in/abner-jezrrel-lopes-dos-santos-a77a94254/" target="_blank" class="btn btn-outline">LinkedIn</a>
+                <a href="#contato" class="btn">Entre em Contato</a>
+            </div>
+        </div>
+    </section>
 
-    <div class="text"> 
-    <h3> Portifólio</h3>
-    <h1> ABNER JEZRREL </h1> 
-   
-      <div class="redes">
-        <a href="https://github.com/jezrreloriginal?tab=repositories"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/abner-abner-/"><i class="fa-brands fa-linkedin"></i></a> <br>
- <button class="btn" onclick="window.location.href='https://docs.google.com/document/d/1_LGxvtkLi2d9r3tgScTsh9uBa6yvlYwAxQiDcsYOm8U/edit?usp=sharing'"> Meu TCC </button>
+    <!-- SEÇÃO DA INICIAÇÃO CIENTÍFICA -->
+    <section class="section" id="ic">
+        <h2>🔬 Iniciação Científica (IC)</h2>
+        <div class="card ic-card">
+            <div class="card-content">
+                <h3>Desenvolvimento de Dispositivo Optofluídico para Diagnóstico Rápido</h3>
+                <p><strong>Laboratório:</strong> Laboratório de Espectroscopia e Eletrônica (LEESP) - UFABC</p>
+                <p><strong>Orientador:</strong> Prof. Dr. Herculano Martinho</p>
+                <p>
+                    Pesquisa voltada à aplicação de biofotônica e espectroscopia para diagnóstico óptico não invasivo. 
+                    Desenvolvimento e integração de sistemas optofluídicos para identificação de patologias através da interação da luz com tecidos e fluidos biológicos.
+                </p>
+            </div>
+            <div class="tags">
+                <span class="tag">Biofotônica</span>
+                <span class="tag">Espectroscopia</span>
+                <span class="tag">Optofluídica</span>
+                <span class="tag">Diagnóstico Clínico</span>
+                <span class="tag">LEESP/UFABC</span>
+            </div>
+        </div>
+    </section>
 
- <p> Sou formado em Desenvolvimento de Sistemas e estudante do curso Interdiscplinar em <br>Ciência e Tecnologia pela Universidade Federal do ABC. , <span> SEJA BEM VINDO!</span></P>
-      </div>  
-  </div>
- </div>
-</section>
+    <!-- SEÇÃO DE PROJETOS -->
+    <section class="section" id="projetos">
+        <h2>🚀 Meus Projetos</h2>
+        <div class="grid">
 
+            <!-- VAQUINHA DE VIAGEM -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Sistema de Vaquinha para Viagens</h3>
+                    <p>Plataforma interativa para arrecadação coletiva entre amigos. Atualiza automaticamente o status financeiro e a lista de confirmados via integração com planilha em tempo real.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Google Sheets API</span>
+                    </div>
+                    <a href="https://jezrreloriginal.github.io/praia/" target="_blank" class="card-link">Ver Projeto 🔗</a>
+                </div>
+            </div>
 
+            <!-- LANDING PAGE PIZZARIA -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Landing Page Pizzaria</h3>
+                    <p>Página institucional e promocional para estabelecimento gastronômico com layout moderno e totalmente responsivo.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <a href="https://jezrreloriginal.github.io/pizza/" target="_blank" class="card-link">Ver Projeto 🔗</a>
+                </div>
+            </div>
 
- <section id="sobre-l" class="sobre">
-  <div class="flex">
-    <div class="ft-po" id="abner"> <img src="abner.jpg" alt="">
-    </div>
+            <!-- CALCULADORA ONLINE -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Calculadora Online</h3>
+                    <p>Aplicação web para cálculos rápidos, com interface limpa, intuitiva e foco na experiência do usuário.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <a href="https://jezrreloriginal.github.io/calculadora-online.com./" target="_blank" class="card-link">Ver Projeto 🔗</a>
+                </div>
+            </div>
 
-    <div class="tex-sobre"> 
-      <h2> Olá, me chamo <span> ABNER JEZRREL.</span></h2>
-      <p>Sempre enxergou oportunidades em novos começos e desafiou limites para alcançar grandes conquistas.<br>  
-        Após ser aprovado em 9 universidades, escolheu a UFABC para cursar Ciências e Tecnologia, um curso interdisciplinar que oferece uma base sólida em diversas áreas do conhecimento e amplia possibilidades de especialização.<br><br>  
+            <!-- PLATAFORMA DE TAROT -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Plataforma de Agendamento Tarot</h3>
+                    <p>Página de serviços com reserva de horário liberada apenas após confirmação de pagamento via integração de API.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">API</span>
+                    </div>
+                    <a href="https://jezrreloriginal.github.io/taror.com/" target="_blank" class="card-link">Ver Projeto 🔗</a>
+                </div>
+            </div>
+
+            <!-- PORTFÓLIO PAULO HENRIQUE PINTURAS -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Portfólio Paulo Henrique Pinturas</h3>
+                    <p>Website institucional para apresentação de serviços de pintura residencial e comercial, com galeria de trabalhos e contatos.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <a href="https://jezrreloriginal.github.io/Paulo-Henrique-pinturas/1.html" target="_blank" class="card-link">Ver Projeto 🔗</a>
+                </div>
+            </div>
+
+            <!-- EM ANDAMENTO: CALENDÁRIO DE CONSULTAS -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Agendamento de Consultas ⏳</h3>
+                    <p><em>(Em Desenvolvimento)</em> Sistema de calendário interativo projetado para gestão e agendamento simplificado de horários de atendimento.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Em Progresso</span>
+                    </div>
+                    <a href="https://jezrreloriginal.github.io/calendario/" target="_blank" class="card-link">Ver Em Andamento 🔗</a>
+                </div>
+            </div>
+
+            <!-- EM ANDAMENTO: SISTEMA DE PEDIDOS -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Sistema de Pedidos para Restaurantes ⏳</h3>
+                    <p><em>(Em Desenvolvimento)</em> Solução digital para seleção de pratos, comanda online e envio rápido de pedidos para estabelecimentos gastronômicos.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Em Progresso</span>
+                    </div>
+                    <a href="https://jezrreloriginal.github.io/sistema-de-pedidos.com/" target="_blank" class="card-link">Ver Em Andamento 🔗</a>
+                </div>
+            </div>
+
+            <!-- FORMULÁRIO DINÂMICO & BANCO DE DADOS -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Formulário Dinâmico & Banco de Dados</h3>
+                    <p>Sistema flexível adaptável para necessidades pessoais ou empresariais, interligado a um Banco de Dados SQL.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">SQL</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                    </div>
+                    <a href="https://github.com/jezrreloriginal/Formulario-para-empresas" target="_blank" class="card-link">Ver Repositório 🔗</a>
+                </div>
+            </div>
+
+            <!-- CALCULADORA KOTLIN -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Calculadora Kotlin Android</h3>
+                    <p>Aplicativo de calculadora funcional desenvolvido em Kotlin nativo com foco em arquitetura limpa e interface fluida.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag">Kotlin</span>
+                        <span class="tag">Android</span>
+                    </div>
+                    <a href="https://github.com/jezrreloriginal/Calculadora-kotlin" target="_blank" class="card-link">Ver Repositório 🔗</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE CONTATO -->
+    <section class="section" id="contato">
+        <h2>📩 Entre em Contato</h2>
         
-        Formado como Técnico em Desenvolvimento de Sistemas, agora explora esse ambiente acadêmico inovador e flexível, considerando seguir carreira em Neurociências e Ciência de Dados.<br>  
-        Movido pelo pioneirismo e pelo desejo de construir um legado de inovação, trilha um caminho promissor onde conhecimento e tecnologia se unem para transformar o futuro.</p>
-        
+        <form action="https://formsubmit.co/Abnerjezrrel@gmail.com" method="POST" class="contact-form">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Novo Contato via Portfólio!">
+            
+            <input type="text" name="Nome" id="nome" placeholder="Seu Nome Completo*" required>
+            <input type="email" name="Email" id="email" placeholder="Seu E-Mail*" required>
+            <input type="tel" name="Telefone" id="telefone" placeholder="Seu Celular com DDD">
+            <textarea name="Mensagem" id="mensagem" rows="5" placeholder="Sua Mensagem*" required></textarea>
+            
+            <div class="btn-group">
+                <button type="submit" class="btn">ENVIAR POR E-MAIL</button>
+                <button type="button" onclick="enviarWhatsApp()" class="btn btn-whatsapp">ENVIAR VIA WHATSAPP</button>
+            </div>
+        </form>
+    </section>
 
-        </p>
-    </div>
-  </div>
- 
-</section>                              
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <p><strong>ABNER JEZRREL LOPES DOS SANTOS</strong></p>
+        <p>Abnerjezrrel@gmail.com</p>
+        <div class="footer-links">
+            <a href="http://lattes.cnpq.br/1885025295013399" target="_blank">Currículo Lattes</a> | 
+            <a href="https://github.com/jezrreloriginal" target="_blank">GitHub</a> | 
+            <a href="https://www.linkedin.com/in/abner-jezrrel-lopes-dos-santos-a77a94254/" target="_blank">LinkedIn</a> | 
+            <a href="https://wa.me/5511967299842" target="_blank">WhatsApp</a>
+        </div>
+    </footer>
 
+    <!-- SCRIPT WHATSAPP -->
+    <script>
+        function enviarWhatsApp() {
+            const numero = "5511967299842";
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("email").value;
+            const telefone = document.getElementById("telefone").value;
+            const mensagem = document.getElementById("mensagem").value;
 
+            if(!nome || !email || !mensagem) {
+                alert("Por favor, preencha os campos obrigatórios (*)");
+                return;
+            }
 
-<section id="projeto" class="pj">
+            const textoFormatado = 
+                `*NOVO CONTATO VIA PORTFÓLIO*\n\n` +
+                `*Nome:* ${nome}\n` +
+                `*E-mail:* ${email}\n` +
+                `*Telefone:* ${telefone || 'Não informado'}\n\n` +
+                `*Mensagem:*\n${mensagem}`;
 
-<div class="projetos">
-  <h2 style="font-size: 70px;"> MEUS <SPAN>PROJETOS</SPAN></h2>
-  <div class="flex-container">
-    <div class="img"><a href="//caroltarot03.com"><p class="ttx">Página de tarot com reserva de horario apenas após o pagamento. <span> HTML,5 JAVA, CSS, API.</p></a><img src="local-na-rede-internet (1).png" alt=""></a></div>
-    <div class="img"><a href="https://jezrreloriginal.github.io/calculadora-online.com./"><p class="ttx">calculadora, utilizando a linguagem de programação<span> Kotlin.</span></p><img src="calculadora.png" alt=""></a></div>
-    <div class="img"><a href="https://jezrreloriginal.github.io/formulario.com/"><p class="ttx">Formulario que pode ser adaptado para quaisquer necessidade pessoal ou empresarial, interliagado a um  <span>Banco de Dados SQL, JavaScript, HTML5, CSS</span></p><img src="formr.png" alt=""></a></div>  
-    <div class="img"><a href="https://github.com/jezrreloriginal/pizza/blob/main/README.md"><p class="ttx">LANDING PAGE PIZZARIA <span> JAVA, HTML, CSS</span></p><img src="comercio-eletronico.png" alt=""></a></div>
-    <div class="img"><a href="https://jezrreloriginal.github.io/quiz.jezrreltec.com/"><p class="ttx">JAVA, HTML, CSS<span> Programação Web</span></p><img src="quiz.png" alt=""></a></div>
-   
-</section>
-
-
-
-
-<section id="contato" class="contato">
-  <div class="interface">
-    <h2> ENTRE EM <span> CONTATO. </span></h2>
-    <form action="https://formsubmit.co/abnerjezrrel06102005@gmail.com" method="POST">
-      <input type="text" name="Nome" required placeholder="Seu Nome Completo">
-      <input type="email" name="e-mail" required placeholder="Seu E-Mail">
-      <input type="text" name="contato" placeholder="Seu Celular com DDD">
-      <input id="txtarea" type="text" name="mensagen" placeholder="Sua Mensagem" style="height: 200px;">
-  
-      <button type="submit">ENVIAR</button>
-  </form>
-  </form>
-  <div class="wat">
-  <a href="https://api.whatsapp.com/send?phone=+5511951367508&text=Olá,%20olhei%20o%20seu%20portfólio%20e%20gostaria%20de%20mais%20informações." target="_blank" style="color: red;">
-    WhatsApp <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16" style="color: red;">
-        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-    </svg>
-</a></div>
-
-</section>
-
-<section id="Habilidades" class="habilid">
-  <div class="habil"> 
-    <h2 style="font-size: 40px;"> HABILIDADES EM <span> PROGRAMAÇÃO. </span></h2>
-    <div class="txt-habil">
-    <div></div>
-    <div class="item"><img src="Java.jpg" alt=""></div> 
-    <div class="item"><img src="php.png" alt=""></div>
-    <div class="item"><img src="Python - MI PORTAL.png" alt=""></div>
-    <div class="item"><img src="html.png" alt=""></div>
-    <div class="item"><img src="kotlinopportunity.jpg" alt=""></div>
-    <div class="item"><img src="download.jpg" alt=""></div>
-    <div class="item"><img src="" alt="">
-    </div>
-    
-
-
-  </div>
-</section>
-
-<div class="roda">
-  <footer><a href="#começo">Começo</a><br>
-    <p> ABNER JEZRREL LOPES DOS SANTOS</p><br>
-    <P> abnerjezrrel06102005@gmail.com</P>
-    <a href="https://github.com/jezrreloriginal?tab=repositories"><i class="fa-brands fa-github"></i></a>
-    <a href="www.linkedin.com/in/abner-abner-"><i class="fa-brands fa-linkedin"></i></a> <br>
-    <div class="rod">  <li>
-<div class="wat">
-      <a href="https://api.whatsapp.com/send?phone=+5511951367508&text=Olá,%20olhei%20o%20seu%20portfólio%20e%20gostaria%20de%20mais%20informações." target="_blank">
-        WhatsApp <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-        </svg>
-    </a></div><br>
-  <footer><a href="#começo">Começo</a><br>
-
-      </li>
-    </div>
-  
-  
-</div>
-
-</div>
-</div>
-
-</body>
+            const url = `https://wa.me/${numero}?text=${encodeURIComponent(textoFormatado)}`;
+            window.open(url, "_blank");
+        }
+    </script>
 </body>
 </html>
